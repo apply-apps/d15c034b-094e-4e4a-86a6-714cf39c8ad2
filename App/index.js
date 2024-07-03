@@ -6,10 +6,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaView, StyleSheet, Text, FlatList, TouchableOpacity, View, ScrollView } from 'react-native';
 
+const Stack = createNativeStackNavigator();
+
 const stories = [
     { id: '1', title: 'Cinderella', content: 'Once upon a time...' },
     { id: '2', title: 'Snow White', content: 'Once upon a time...' },
     { id: '3', title: 'Sleeping Beauty', content: 'Once upon a time...' },
+    { id: '4', title: 'Little Red Riding Hood', content: 'Once upon a time...' },
 ];
 
 function HomeScreen({ navigation }) {
@@ -38,11 +41,11 @@ function StoryScreen({ route }) {
     const { story } = route.params;
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={storyStyles.container}>
             <ScrollView>
-                <View style={styles.storyContainer}>
-                    <Text style={styles.title}>{story.title}</Text>
-                    <Text style={styles.content}>{story.content}</Text>
+                <View style={storyStyles.storyContainer}>
+                    <Text style={storyStyles.title}>{story.title}</Text>
+                    <Text style={storyStyles.content}>{story.content}</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -75,16 +78,27 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
     },
+});
+
+const storyStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 20,
+        backgroundColor: '#F5F5F5',
+    },
     storyContainer: {
         padding: 20,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
     },
     content: {
         fontSize: 16,
         lineHeight: 24,
     },
 });
-
-const Stack = createNativeStackNavigator();
 
 export default function App() {
     return (
