@@ -41,11 +41,11 @@ function StoryScreen({ route }) {
     const { story } = route.params;
 
     return (
-        <SafeAreaView style={storyStyles.container}>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
-                <View style={storyStyles.storyContainer}>
-                    <Text style={storyStyles.title}>{story.title}</Text>
-                    <Text style={storyStyles.content}>{story.content}</Text>
+                <View style={styles.storyContainer}>
+                    <Text style={styles.storyTitle}>{story.title}</Text>
+                    <Text style={styles.content}>{story.content}</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -56,16 +56,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 20,
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#121212',
     },
     header: {
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+        color: '#FFFFFF',
     },
     item: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#1E1E1E',
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
@@ -77,26 +78,21 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-    },
-});
-
-const storyStyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingTop: 20,
-        backgroundColor: '#F5F5F5',
+        color: '#FFFFFF',
     },
     storyContainer: {
         padding: 20,
     },
-    title: {
+    storyTitle: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
+        color: '#FFFFFF',
     },
     content: {
         fontSize: 16,
         lineHeight: 24,
+        color: '#B0B0B0',
     },
 });
 
